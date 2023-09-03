@@ -24,7 +24,7 @@ export default function Products(): JSX.Element {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response2 = await fetch("http://157.230.2.35/api/category");
+        const response2 = await fetch("http://104.248.225.169/api/category");
         const data2 = await response2.json();
         setCategory(data2.data);
       } catch (error) {
@@ -38,7 +38,7 @@ export default function Products(): JSX.Element {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const responsee = await fetch("http://157.230.2.35/api/catalog");
+        const responsee = await fetch("http://104.248.225.169/api/catalog");
         const dataa = await responsee.json();
         setCatalog(dataa.data);
       } catch (error) {
@@ -61,7 +61,7 @@ export default function Products(): JSX.Element {
       console.log(catalogId.current.value);
 
       try {
-        fetch("http://157.230.2.35/api/category", {
+        fetch("http://104.248.225.169/api/category", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -75,7 +75,7 @@ export default function Products(): JSX.Element {
             } else {
               console.log(data);
             }
-            const response2 = await fetch("http://157.230.2.35/api/category");
+            const response2 = await fetch("http://104.248.225.169/api/category");
             const data2 = await response2.json();
             setCategory(data2.data);
           });
@@ -97,7 +97,7 @@ export default function Products(): JSX.Element {
   const handleDeleteCategory = (id: any) => {
     const handleDelete = async () => {
       try {
-        const response = await fetch(`http://157.230.2.35/api/category/${id}`, {
+        const response = await fetch(`http://104.248.225.169/api/category/${id}`, {
           method: "DELETE",
         });
         const responseData = await response.json();
@@ -105,7 +105,7 @@ export default function Products(): JSX.Element {
           console.log(responseData.errors);
         } else {
           console.log(responseData);
-          const response = await fetch("http://157.230.2.35/api/category");
+          const response = await fetch("http://104.248.225.169/api/category");
           const data = await response.json();
           setCategory(data.data);
         }
@@ -124,7 +124,7 @@ export default function Products(): JSX.Element {
     };
 
     try {
-      const response = await fetch(`http://157.230.2.35/api/category/${Id}`, {
+      const response = await fetch(`http://104.248.225.169/api/category/${Id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -137,7 +137,7 @@ export default function Products(): JSX.Element {
       } else {
         console.log(responseData);
         alert(responseData.message);
-        const response = await fetch("http://157.230.2.35/api/category");
+        const response = await fetch("http://104.248.225.169/api/category");
         const data = await response.json();
         setCategory(data.data);
       }

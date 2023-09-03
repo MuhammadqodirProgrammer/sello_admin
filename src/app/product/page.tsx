@@ -60,17 +60,17 @@ export default function Products(): JSX.Element {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response1 = await fetch("http://157.230.2.35/api/brand");
+        const response1 = await fetch("http://104.248.225.169/api/brand");
         const data1 = await response1.json();
         setBrend(data1.data);
-        const response2 = await fetch("http://157.230.2.35/api/catalog");
+        const response2 = await fetch("http://104.248.225.169/api/catalog");
         const data2 = await response2.json();
         setCatalog(data2.data);
-        const response3 = await fetch("http://157.230.2.35/api/category");
+        const response3 = await fetch("http://104.248.225.169/api/category");
         const data3 = await response3.json();
         setCategori(data3.data);
 
-        const response4 = await fetch("http://157.230.2.35/api/subcategory");
+        const response4 = await fetch("http://104.248.225.169/api/subcategory");
         const data4 = await response4.json();
         setSubcategori(data4.data);
       } catch (error) {
@@ -83,7 +83,7 @@ export default function Products(): JSX.Element {
   //pdoduct Get
   useEffect(() => {
     const myfuns = async () => {
-      const response5 = await fetch("http://157.230.2.35/api/product");
+      const response5 = await fetch("http://104.248.225.169/api/product");
       const data5 = await response5.json();
       setProduct(data5);
     };
@@ -102,7 +102,7 @@ export default function Products(): JSX.Element {
       formData.append("file", files.current?.files[0]);
       try {
         const response = await axios.post(
-          "http://157.230.2.35/api/file",
+          "http://104.248.225.169/api/file",
           formData
         );
         const data = response.data;
@@ -123,7 +123,7 @@ export default function Products(): JSX.Element {
 
         console.log(datas);
 
-        fetch("http://157.230.2.35/api/product", {
+        fetch("http://104.248.225.169/api/product", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -137,7 +137,7 @@ export default function Products(): JSX.Element {
             } else {
               console.log(data);
             }
-            const response5 = await fetch("http://157.230.2.35/api/product");
+            const response5 = await fetch("http://104.248.225.169/api/product");
             const data5 = await response5.json();
             setProduct(data5);
             alert(data.message)
@@ -155,7 +155,7 @@ export default function Products(): JSX.Element {
 
   //Delete
   const handleDeleteProduct = (index: number) => {
-    fetch(`http://157.230.2.35/api/product/${index}`, {
+    fetch(`http://104.248.225.169/api/product/${index}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -167,7 +167,7 @@ export default function Products(): JSX.Element {
           console.log(data.errors);
         } else {
           console.log(data);
-          const response5 = await fetch("http://157.230.2.35/api/product");
+          const response5 = await fetch("http://104.248.225.169/api/product");
           const data5 = await response5.json();
           setProduct(data5);
          alert(data.message)
@@ -204,7 +204,7 @@ export default function Products(): JSX.Element {
       formData.append("file", files1.current?.files[0]);
       try {
         const response = await axios.post(
-          "http://157.230.2.35/api/file",
+          "http://104.248.225.169/api/file",
           formData
         );
         const data = response.data;
@@ -224,7 +224,7 @@ export default function Products(): JSX.Element {
 
         console.log(datas);
 
-        fetch(`http://157.230.2.35/api/product/${Id}`, {
+        fetch(`http://104.248.225.169/api/product/${Id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -240,7 +240,7 @@ export default function Products(): JSX.Element {
               alert(data.message)
 
             }
-            const response5 = await fetch("http://157.230.2.35/api/product");
+            const response5 = await fetch("http://104.248.225.169/api/product");
             const data5 = await response5.json();
             setProduct(data5);
           });
@@ -449,7 +449,7 @@ export default function Products(): JSX.Element {
                 <li className="list_item  max-w-[250px] min-w-[250px] border mt-8 rounded-xl bg-white drop-shadow-lg ">
                   <Image
                     className="inline w-full h-[250px]  rounded-xl p-1"
-                    src={`http://157.230.2.35//${el.product_image}`}
+                    src={`http://104.248.225.169//${el.product_image}`}
                     alt=""
                     width="200"
                     height="300"

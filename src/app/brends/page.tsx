@@ -45,21 +45,21 @@ export default function Products(): JSX.Element {
       try {
    
 
-        const response1 = await fetch("http://157.230.2.35/api/category");
+        const response1 = await fetch("http://104.248.225.169/api/category");
         const data1 = await response1.json();
         setCategori(data1.data);
-        const response2 = await fetch("http://157.230.2.35/api/catalog");
+        const response2 = await fetch("http://104.248.225.169/api/catalog");
 
         const data2 = await response2.json();
         setCatalog(data2.data);
  
 
 
-        const response4 = await fetch( "http://157.230.2.35/api/subcategory");
+        const response4 = await fetch( "http://104.248.225.169/api/subcategory");
 
         const data4 = await response4.json();
         setSubcategori(data4.data);
-        const response5 = await fetch("http://157.230.2.35/api/brand");
+        const response5 = await fetch("http://104.248.225.169/api/brand");
         const data5 = await response5.json();
         setBrend(data5.data);
 
@@ -83,7 +83,7 @@ export default function Products(): JSX.Element {
       try {
         const formData = new FormData();
         formData.append("file", files.current?.files[0]);
-        const response = await axios.post("http://157.230.2.35/api/file", formData);
+        const response = await axios.post("http://104.248.225.169/api/file", formData);
         const data = response.data;
         const datas = {
           brand_image: data.name,
@@ -94,7 +94,7 @@ export default function Products(): JSX.Element {
         };
         console.log(datas);
 
-         fetch("http://157.230.2.35/api/brand", {
+         fetch("http://104.248.225.169/api/brand", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -109,7 +109,7 @@ export default function Products(): JSX.Element {
           console.log(data);
           alert(data.message)
         }
-        const response5 = await fetch("http://157.230.2.35/api/brand");
+        const response5 = await fetch("http://104.248.225.169/api/brand");
         const data5 = await response5.json();
         setBrend(data5.data);
      
@@ -137,7 +137,7 @@ export default function Products(): JSX.Element {
 
   //Delete
   const handleDeleteProduct = (index: number) => {
-    fetch(`http://157.230.2.35/api/brand/${index}`, {
+    fetch(`http://104.248.225.169/api/brand/${index}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -149,7 +149,7 @@ export default function Products(): JSX.Element {
           console.log(data.errors);
         } else {
           console.log(data);
-          const response5 = await fetch("http://157.230.2.35/api/brand");
+          const response5 = await fetch("http://104.248.225.169/api/brand");
           const data5 = await response5.json();
           setBrend(data5.data);
           alert(data.message)
@@ -169,7 +169,7 @@ export default function Products(): JSX.Element {
       formData.append("file", files1.current?.files[0]);
       try {
         const response = await axios.post(
-          "http://157.230.2.35/api/file",
+          "http://104.248.225.169/api/file",
           formData
         );
         const data = response.data;
@@ -184,7 +184,7 @@ export default function Products(): JSX.Element {
 
         console.log(datas);
 
-        fetch(`http://157.230.2.35/api/brand/${Id}`, {
+        fetch(`http://104.248.225.169/api/brand/${Id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -200,7 +200,7 @@ export default function Products(): JSX.Element {
               alert(data.message)
 
             }
-            const response5 = await fetch("http://157.230.2.35/api/brand");
+            const response5 = await fetch("http://104.248.225.169/api/brand");
             const data5 = await response5.json();
             setBrend(data5.data);
             
@@ -315,7 +315,7 @@ export default function Products(): JSX.Element {
                 <li className="list_item  max-w-[250px] min-w-[250px] border mt-8 rounded-xl bg-white drop-shadow-lg ">
                   <Image
                     className="inline w-full h-[250px]  rounded-xl p-1"
-                    src={`http://157.230.2.35/${el.brand_image}`}
+                    src={`http://104.248.225.169/${el.brand_image}`}
                     alt=""
                     width="200"
                     height="300"

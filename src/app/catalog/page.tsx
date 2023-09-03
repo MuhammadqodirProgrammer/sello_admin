@@ -16,7 +16,7 @@ export default function Products(): JSX.Element {
 
   const fetchCatalogs = async () => {
     try {
-      const response = await fetch("http://157.230.2.35/api/catalog");
+      const response = await fetch("http://104.248.225.169/api/catalog");
       const data = await response.json();
       setCatalog(data.data);
     } catch (error) {
@@ -37,7 +37,7 @@ export default function Products(): JSX.Element {
       };
       try {
 
-        const response = await fetch("http://157.230.2.35/api/catalog", {
+        const response = await fetch("http://104.248.225.169/api/catalog", {
 
           method: "POST",
           headers: {
@@ -66,7 +66,7 @@ export default function Products(): JSX.Element {
     const handleDelete = async () => {
       try {
         const response = await fetch(
-          `http://157.230.2.35/api/catalog/${id}`,
+          `http://104.248.225.169/api/catalog/${id}`,
           {
             method: "DELETE",
           }
@@ -76,7 +76,7 @@ export default function Products(): JSX.Element {
           console.log(responseData.errors);
         } else {
           console.log(responseData);
-          const response = await fetch("http://157.230.2.35/api/catalog");
+          const response = await fetch("http://104.248.225.169/api/catalog");
           const data = await response.json();
           setCatalog(data.data);
         }
@@ -103,7 +103,7 @@ catalog_name:title1.current.value,
     
     try {
       const response = await fetch(
-        `http://157.230.2.35/api/catalog/${Id}`,
+        `http://104.248.225.169/api/catalog/${Id}`,
         {
           method: "PATCH",
           headers: {
@@ -117,7 +117,7 @@ catalog_name:title1.current.value,
         console.log(responseData.errors);
       } else {
         console.log(responseData);
-        const response = await fetch("http://157.230.2.35/api/catalog");
+        const response = await fetch("http://104.248.225.169/api/catalog");
           const data = await response.json();
           setCatalog(data.data);  
       }

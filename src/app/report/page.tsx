@@ -15,21 +15,21 @@ export default function Reports(): JSX.Element {
     const fetchData = async () => {
       try {
 
-        const response1 = await fetch("http://157.230.2.35/api/product");
+        const response1 = await fetch("http://104.248.225.169/api/product");
         const data1 = await response1.json();
         setProduct(data1);
 
-        const response2 = await fetch("http://157.230.2.35/api/discount");
+        const response2 = await fetch("http://104.248.225.169/api/discount");
         const data2 = await response2.json();
         setSello(data2.data);
 
-        const response3 = await fetch("http://157.230.2.35/api/user");
+        const response3 = await fetch("http://104.248.225.169/api/user");
 
         const data3 = await response3.json();
         setUser(data3.data);
 
 
-        const response4 = await fetch("http://157.230.2.35/api/brand");
+        const response4 = await fetch("http://104.248.225.169/api/brand");
 
         const data4 = await response4.json();
         setBrend(data4.data);

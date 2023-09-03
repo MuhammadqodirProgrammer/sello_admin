@@ -31,10 +31,10 @@ export default function Product(): JSX.Element {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response2 = await fetch("http://157.230.2.35/api/product");
+        const response2 = await fetch("http://104.248.225.169/api/product");
         const data2 = await response2.json();
         setProduct(data2);
-        const responseDiscount = await fetch("http://157.230.2.35/api/discount");
+        const responseDiscount = await fetch("http://104.248.225.169/api/discount");
         const data3 = await responseDiscount.json();
         setDiscountProduct(data3?.data )
        
@@ -46,7 +46,7 @@ export default function Product(): JSX.Element {
     fetchData();
   }, []);
   const getDiscout =async()=>{
-    const responseDiscount = await fetch("http://157.230.2.35/api/discount");
+    const responseDiscount = await fetch("http://104.248.225.169/api/discount");
     const data3 = await responseDiscount.json();
     setDiscountProduct(data3?.data)
   }
@@ -63,7 +63,7 @@ export default function Product(): JSX.Element {
       console.log(data);
       
       try {
-        fetch("http://157.230.2.35/api/discount", {
+        fetch("http://104.248.225.169/api/discount", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -97,7 +97,7 @@ export default function Product(): JSX.Element {
       console.log(data ,"edit");
       
       try {
-        fetch(`http://157.230.2.35/api/discount/${id}`, {
+        fetch(`http://104.248.225.169/api/discount/${id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -131,7 +131,7 @@ export default function Product(): JSX.Element {
 
    //Delete
    const handleDeleteProduct = (index: number) => {
-    fetch(`http://157.230.2.35/api/discount/${index}`, {
+    fetch(`http://104.248.225.169/api/discount/${index}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -227,7 +227,7 @@ console.log(id ,"id");
                 <li className="list_item  max-w-[250px] min-w-[250px] border mt-8 rounded-xl bg-white drop-shadow-lg ">
                   <Image
                     className="inline w-full h-[250px]  rounded-xl p-1"
-                    src={`http://157.230.2.35//${el?.product?.product_image}`}
+                    src={`http://104.248.225.169//${el?.product?.product_image}`}
                     alt=""
                     width="200"
                     height="300"

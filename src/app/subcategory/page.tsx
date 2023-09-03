@@ -32,14 +32,14 @@ export default function Product(): JSX.Element {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response2 = await fetch("http://157.230.2.35/api/category");
+        const response2 = await fetch("http://104.248.225.169/api/category");
         const data2 = await response2.json();
         setProduct(data2?.data);
-        const responseDiscount = await fetch("http://157.230.2.35/api/subcategory");
+        const responseDiscount = await fetch("http://104.248.225.169/api/subcategory");
         const data3 = await responseDiscount.json();
         setDiscountProduct(data3?.data )
 // catalog 
-        const responseCatalog= await fetch("http://157.230.2.35/api/catalog");
+        const responseCatalog= await fetch("http://104.248.225.169/api/catalog");
         const data4 = await responseCatalog.json();
         setCatalog(data4?.data )
        console.log(data4?.data  ,"setCatalog");
@@ -52,7 +52,7 @@ export default function Product(): JSX.Element {
     fetchData();
   }, []);
   const getDiscout =async()=>{
-    const responseDiscount = await fetch("http://157.230.2.35/api/subcategory");
+    const responseDiscount = await fetch("http://104.248.225.169/api/subcategory");
     const data3 = await responseDiscount.json();
     setDiscountProduct(data3?.data)
   }
@@ -70,7 +70,7 @@ export default function Product(): JSX.Element {
       console.log(data ,'data');
       
       try {
-        fetch("http://157.230.2.35/api/subcategory", {
+        fetch("http://104.248.225.169/api/subcategory", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -105,7 +105,7 @@ export default function Product(): JSX.Element {
 console.log(end_timeEdit?.current.value ,"dataaaaaaaaaaaaaaaaaaaaaaaa");
 
       try {
-        fetch(`http://157.230.2.35/api/subcategory/${id}`, {
+        fetch(`http://104.248.225.169/api/subcategory/${id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -140,7 +140,7 @@ console.log(end_timeEdit?.current.value ,"dataaaaaaaaaaaaaaaaaaaaaaaa");
    //Delete
 
    const handleDeleteProduct = (index: number) => {
-    fetch(`http://157.230.2.35/api/subcategory/${index}`, {
+    fetch(`http://104.248.225.169/api/subcategory/${index}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
